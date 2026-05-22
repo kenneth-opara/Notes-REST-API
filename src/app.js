@@ -64,7 +64,8 @@ app.use((err, req, res, next) => {
 
   const status = err.status || err.statusCode || 500;
   const message = status < 500 ? err.message : "Internal server error.";
-  res.status(status).json({ status: "error", message });
+ // res.status(status).json({ status: "error", message });
+ res.status(status).json({status: "error", message: err.message, stack: err.stack});
 });
 
 // ─── Start ────────────────────────────────────────────────────────────────────
