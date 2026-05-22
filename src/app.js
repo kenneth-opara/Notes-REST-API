@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
 const connectDB = require("./config/database");
@@ -15,6 +16,7 @@ connectDB().catch((err) => {
 
 // ─── App Setup ────────────────────────────────────────────────────────────────
 const app = express();
+app.use(cors());
 
 app.use(express.json({ limit: "50kb" })); // guard against large payloads
 app.use(express.urlencoded({ extended: false }));
