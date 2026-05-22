@@ -15,7 +15,7 @@ const options = {
         description: "Local development server",
       },
       {
-        url: "https://note-rest-api",
+        url: "https://note-rest-api.onrender.com",
         description: "production",
       },
     ],
